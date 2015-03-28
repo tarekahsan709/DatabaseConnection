@@ -4,10 +4,10 @@ import java.sql.SQLException;
 
 public class DatabaseConnection
 {
-	private static final String userName="tarek";
-	private static final String userPass="tarekahsan";
+	private static final String userName="root";
+	private static final String userPass="user";
 	private static final String hCon="jdbc:hsqldb:data/explorecalifornia";
-	private static final String MCon="jdbc:mysql://localhost/explorecalifornia";
+	private static final String MCon="jdbc:mysql://localhost:3306/classicmodels";
 	
 	
 	

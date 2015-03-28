@@ -12,17 +12,22 @@ public class Main
 	{ 
 
 
-		try(Connection con=DatabaseConnection.getConnection(DbName.hSqlDb);
+		try(Connection con=DatabaseConnection.getConnection(DbName.mySqlDb);
 				Statement stm=con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-				ResultSet resultSet=stm.executeQuery("SELECT * FROM STATES");
-				)
-				{
-			        System.out.println("Our current row number is "+resultSet.getRow());
+				ResultSet resultSet=stm.executeQuery("SELECT * FROM customers");)
+		{
+			 while(resultSet.next())
+			 {
+				 StringBuffer bf=new StringBuffer();
+				 bf.append("the data is "+resultSet.getInt("customerNumber"));
+				 System.out.println(bf.toString());
+				 
+			 }
 
-				} catch (SQLException e) 
-				{
-					System.out.println("Here is the error"+e);
-				}
+		} catch (SQLException e) 
+		{
+		       System.out.println("Here is the error"+e);
+		}
 
 
 
